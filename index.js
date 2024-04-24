@@ -34,7 +34,7 @@ const getFamily = function () {
   let familyMembersAmount = 0;
 
   // Введення кількості людей у родині
-  while (familyMembersAmount < 2) {
+  while (true) {
     familyMembersAmount = prompt(
       "Будь ласка, введіть скільки людей у вашій родині:"
     );
@@ -48,6 +48,7 @@ const getFamily = function () {
     }
     if (familyMembersAmount < 2) {
       alert("Помилка! В родині має бути щонайменше 2 особи!");
+      break;
     }
   }
 
