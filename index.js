@@ -46,10 +46,10 @@ const getFamily = function () {
       familyMembersAmount = 0;
       continue;
     }
-    if (familyMembersAmount < 2) {
-      alert("Помилка! В родині має бути щонайменше 2 особи!");
+    if (familyMembersAmount >= 2) {
       break;
     }
+    alert("Помилка! В родині має бути щонайменше 2 особи!");
   }
 
   let familyPropertyName;
