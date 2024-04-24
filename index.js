@@ -28,7 +28,11 @@ const isEmptyOrNullCheck = function (value) {
  */
 const isUserInputIntNumberErrorCheck = function (input) {
   const inputNumber = Number(input);
-  return isEmptyOrNullCheck(input) === true || Number.isNaN(inputNumber) || Number.isInteger(inputNumber) === false;
+  return (
+    isEmptyOrNullCheck(input) === true ||
+    Number.isNaN(inputNumber) ||
+    Number.isInteger(inputNumber) === false
+  );
 };
 
 const getFamily = function () {
@@ -37,7 +41,8 @@ const getFamily = function () {
   // Введення кількості людей у родині
   while (true) {
     familyMembersAmount = prompt(
-      "Будь ласка, введіть скільки людей у вашій родині:"
+      "Будь ласка, введіть скільки людей у вашій родині:",
+      "2"
     );
 
     if (isUserInputIntNumberErrorCheck(familyMembersAmount)) {
