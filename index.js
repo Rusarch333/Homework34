@@ -56,7 +56,7 @@ const getFamily = function () {
   let familyPropertyValue;
   let family = {};
 
-  // Заповнення об'єкту family  інформацією
+  // Заповнення об'єкту family інформацією
   for (let i = 0; i < familyMembersAmount; i++) {
     // Введення ким є поточний член родини
     while (true) {
