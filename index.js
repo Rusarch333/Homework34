@@ -84,5 +84,4 @@ const getFamily = function () {
 };
 
 console.log(getFamily());
-
 alert("Дякую! Створення об'єкта family завершено, інформацію можна передивитись у консолі!");
