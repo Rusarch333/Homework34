@@ -21,13 +21,14 @@ const isEmptyOrNullCheck = function (value) {
 };
 
 /**
- * Функція перевіряє ввід користувача на відповідність до числа
- * Повертає true, якщо параметр не може привестись або не є числом
+ * Функція перевіряє ввід користувача на відповідність до цілого числа
+ * Повертає true, якщо параметр не може привестись або не є цілим числом
  * @param {*} input
  * @returns {boolean}
  */
-const isUserInputNumberErrorCheck = function (input) {
-  return isEmptyOrNullCheck(input) === true || Number.isNaN(Number(input));
+const isUserInputIntNumberErrorCheck = function (input) {
+  const inputNumber = Number(input);
+  return isEmptyOrNullCheck(input) === true || Number.isNaN(inputNumber) || Number.isInteger(inputNumber) === false;
 };
 
 const getFamily = function () {
@@ -39,7 +40,7 @@ const getFamily = function () {
       "Будь ласка, введіть скільки людей у вашій родині:"
     );
 
-    if (isUserInputNumberErrorCheck(familyMembersAmount)) {
+    if (isUserInputIntNumberErrorCheck(familyMembersAmount)) {
       alert(
         "Помилка! Для продовження введіть коректну кількість людей у родині!"
       );
