@@ -13,7 +13,7 @@
 
 /**
  * Функція перевіряє ввід користувача на "" або null
- * @param {*} input 
+ * @param {*} input
  * @returns {boolean}
  */
 const isEmptyOrNullCheck = function (input) {
@@ -23,7 +23,7 @@ const isEmptyOrNullCheck = function (input) {
 /**
  * Функція перевіряє ввід користувача на відповідність до числа
  * Повертає true, якщо параметр не може привестись або не є числом
- * @param {*} input 
+ * @param {*} input
  * @returns {boolean}
  */
 const isUserInputNumberErrorCheck = function (input) {
@@ -40,7 +40,9 @@ const getFamily = function () {
     );
 
     if (isUserInputNumberErrorCheck(familyMembersAmount)) {
-      alert("Помилка! Для продовження введіть коректну кількість людей у родині!");
+      alert(
+        "Помилка! Для продовження введіть коректну кількість людей у родині!"
+      );
       familyMembersAmount = 0;
       continue;
     }
@@ -48,7 +50,7 @@ const getFamily = function () {
       alert("Помилка! В родині має бути щонайменше 2 особи!");
     }
   }
-  
+
   let familyPropertyName;
   let familyPropertyValue;
   let family = {};
@@ -60,9 +62,11 @@ const getFamily = function () {
       familyPropertyName = prompt(
         "Будь ласка, введіть ким є член родини №" + (i + 1) + ":"
       );
+
       if (isEmptyOrNullCheck(familyPropertyName) === false) {
         break;
       }
+
       alert("Помилка! Введіть коректно ким є поточний член родини!");
     }
 
@@ -71,17 +75,21 @@ const getFamily = function () {
       familyPropertyValue = prompt(
         "Введіть ім'я члену родини №" + (i + 1) + ":"
       );
+
       if (isEmptyOrNullCheck(familyPropertyValue) === false) {
         break;
       }
+
       alert("Помилка! Введіть коректно ім'я поточного члена родини!");
     }
 
     family[familyPropertyName] = familyPropertyValue;
   }
-  
+
   return family;
 };
 
 console.log(getFamily());
-alert("Дякую! Створення об'єкта family завершено, інформацію можна передивитись у консолі!");
+alert(
+  "Дякую! Створення об'єкта family завершено, інформацію можна передивитись у консолі!"
+);
