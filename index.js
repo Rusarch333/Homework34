@@ -12,21 +12,26 @@
 */
 
 /**
- * Функція перевіряє ввід користувача на наявність помилки
- * Якщо помилка відсутня, значить параметр має приводитись або бути числом
+ * Функція перевіряє ввід користувача на "" або null
+ * @param {*} input 
+ * @returns {boolean}
+ */
+const isEmptyOrNullCheck = function (input) {
+  return input === "" || input === null;
+};
+
+/**
+ * Функція перевіряє ввід користувача на відповідність до числа
+ * Повертає true, якщо параметр не може привестись або не є числом
  * @param {*} input 
  * @returns {boolean}
  */
 const isUserInputNumberErrorCheck = function (input) {
-  return input === "" || input === null || Number.isNaN(Number(input));
+  return isEmptyOrNullCheck(input) === true || Number.isNaN(Number(input));
 };
 
 const getFamily = function () {
   let familyMembersAmount = 0;
-
-  let isFamilyPropertyPartErrorCheck = function (propertyPart) {
-    return propertyPart === "" || propertyPart === null;
-  };
 
   // Введення кількості людей у родині
   while (familyMembersAmount < 2) {
@@ -55,7 +60,7 @@ const getFamily = function () {
       familyPropertyName = prompt(
         "Будь ласка, введіть ким є член родини №" + (i + 1) + ":"
       );
-      if (isFamilyPropertyPartErrorCheck(familyPropertyName) === false) {
+      if (isEmptyOrNullCheck(familyPropertyName) === false) {
         break;
       }
       alert("Помилка! Введіть коректно ким є поточний член родини!");
@@ -66,7 +71,7 @@ const getFamily = function () {
       familyPropertyValue = prompt(
         "Введіть ім'я члену родини №" + (i + 1) + ":"
       );
-      if (isFamilyPropertyPartErrorCheck(familyPropertyValue) === false) {
+      if (isEmptyOrNullCheck(familyPropertyValue) === false) {
         break;
       }
       alert("Помилка! Введіть коректно ім'я поточного члена родини!");
