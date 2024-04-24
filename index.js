@@ -13,11 +13,11 @@
 
 /**
  * Функція перевіряє ввід користувача на "" або null
- * @param {*} input
+ * @param {*} value
  * @returns {boolean}
  */
-const isEmptyOrNullCheck = function (input) {
-  return input === "" || input === null;
+const isEmptyOrNullCheck = function (value) {
+  return value === "" || value === null;
 };
 
 /**
