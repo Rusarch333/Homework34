@@ -60,7 +60,7 @@ const getFamily = function () {
 
   let familyPropertyName;
   let familyPropertyValue;
-  let family = {};
+  const family = {};
 
   // Заповнення об'єкту family інформацією
   for (let i = 0; i < familyMembersAmount; i++) {
@@ -70,11 +70,12 @@ const getFamily = function () {
         "Будь ласка, введіть ким є член родини №" + (i + 1) + ":"
       );
 
-      if (isEmptyOrNullCheck(familyPropertyName) === false) {
-        break;
+      if (isEmptyOrNullCheck(familyPropertyName)) {
+        alert("Помилка! Введіть коректно ким є поточний член родини!");
+        continue;
       }
 
-      alert("Помилка! Введіть коректно ким є поточний член родини!");
+      break;
     }
 
     // Введення ім'я члену родини
@@ -83,11 +84,12 @@ const getFamily = function () {
         "Введіть ім'я члену родини №" + (i + 1) + ":"
       );
 
-      if (isEmptyOrNullCheck(familyPropertyValue) === false) {
-        break;
+      if (isEmptyOrNullCheck(familyPropertyValue)) {
+        alert("Помилка! Введіть коректно ім'я поточного члена родини!");
+        continue;
       }
 
-      alert("Помилка! Введіть коректно ім'я поточного члена родини!");
+      break;
     }
 
     family[familyPropertyName] = familyPropertyValue;
